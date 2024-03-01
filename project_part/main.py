@@ -1,23 +1,23 @@
 import random
 
 
-def transport_matrix(seq: list[int]) -> list[int]:
+def transport_matrix(seq: list[list[int]]) -> list[list[int]]:
     return [[seq[j][i] for j in range(len(seq[0]))] for i in range(len(seq))]
 
 
-def mult_matrix_elems(seq: list[int]) -> list[int]:
+def mult_matrix_elems(seq: list[list[int]]) -> list[list[int]]:
     num = int(input('Введите число на которое надо умножить: '))
     return [[seq[i][j] * num for j in range(len(seq[0]))] for i in range(len(seq))]
 
 
-def matrix_rang(seq: list[int]) -> list[int]:
+def matrix_rang(seq: list[list[int]]) -> int:
     cnt = 0
     for row in seq:
         cnt += sum(row) > 0
     return cnt
 
 
-def matrix_determinant(seq: list[int]) -> int:
+def matrix_determinant(seq: list[list[int]]) -> int:
     main, second = 1, 1
     for i in range(len(seq)):
         main *= seq[i][i]
@@ -25,7 +25,7 @@ def matrix_determinant(seq: list[int]) -> int:
     return main - second
 
 
-def mult_matrix_self(seq: list[int]):
+def mult_matrix_self(seq: list[list[int]]) -> list[list[int]]:
     sub_matrix = [r.copy() for r in seq]
     mult_matrix = [[0] * len(seq) for _ in range(len(sub_matrix[0]))]
     for i in range(len(seq)):
