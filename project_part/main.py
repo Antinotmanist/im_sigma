@@ -36,17 +36,19 @@ def mult_matrix_self(seq: list[int]):
             mult_matrix[i][j] = _sum
     return mult_matrix
 
-n, m = int(input('Введите количество строк: ')), int(input('Введите количество столбцов: '))
-matrix = [[random.randrange(10) for _ in range(m)] for _ in range(n)]
-operation = input('Введите операцию: ')
-for r in matrix:
-    print(*r)
 
-funcs = {'транспортирование': transport_matrix, 'умножение': mult_matrix_elems, 'ранг': matrix_rang, 'определитель': matrix_determinant, 'умножение матриц': mult_matrix_self}
-mat = funcs[operation](matrix)
-print()
-if operation in ('ранг', 'определитель'):
-    print(mat)
-else:
-    for row in mat:
-        print(*row)
+if __name__ == '__main__':
+    n, m = int(input('Введите количество строк: ')), int(input('Введите количество столбцов: '))
+    matrix = [[random.randrange(10) for _ in range(m)] for _ in range(n)]
+    operation = input('Введите операцию: ')
+    for r in matrix:
+        print(*r)
+
+    funcs = {'транспортирование': transport_matrix, 'умножение': mult_matrix_elems, 'ранг': matrix_rang, 'определитель': matrix_determinant, 'умножение матриц': mult_matrix_self}
+    mat = funcs[operation](matrix)
+    print()
+    if operation in ('ранг', 'определитель'):
+        print(mat)
+    else:
+        for row in mat:
+            print(*row)

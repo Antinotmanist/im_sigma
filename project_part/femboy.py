@@ -8,5 +8,5 @@
 # rec([1, 2, [3, [4, [1, [[[[[[3]]]]]]]]], [3, 4, [3, [[[[2]]]]]]])
 
 # fa = lambda x: x if x == 1 else fa(x - 1) * x
-a = 'Python TopF'
-print(a.lower())
+import main
+main.matrix_determinant()
